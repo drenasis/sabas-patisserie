@@ -1001,7 +1001,12 @@
         </div>
       </div>
       <div class="form-row">
-        <div class="field full" id="field-date">
+        <div class="field" id="field-phone">
+          <label for="phone">Phone number <span style="font-weight:400; color:var(--cocoa-soft); text-transform:none; letter-spacing:0;">(optional)</span></label>
+          <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="07123 456789">
+          <span class="error-msg"></span>
+        </div>
+        <div class="field" id="field-date">
           <label for="dateNeeded">Date needed</label>
           <input type="date" id="dateNeeded" name="dateNeeded">
           <span class="error-msg"></span>
@@ -1217,6 +1222,7 @@
       body: JSON.stringify({
         name: name,
         email: email,
+        phone: document.getElementById('phone').value.trim(),
         occasion: occasion,
         cakeType: cakeType,
         dateNeeded: document.getElementById('dateNeeded').value,
